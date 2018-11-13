@@ -23,7 +23,7 @@ function onMenuClose() {
 function onScroll() {
     var header = document.querySelector('.header');
     var headerTitle = document.querySelector('.header-title');
-    var size = 0.9 * screen.height;
+    var size = 200;
     if (document.body.scrollTop > size || document.documentElement.scrollTop > size) {
         header.classList.add('shadow');
         header.style.backgroundColor = 'var(--dark)';
