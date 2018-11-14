@@ -22,6 +22,10 @@
     --dark: #343a40;
 }
 
+.bg-transparent {
+    background-color: transparent;
+}
+
 .bg-blue {
     background-color: var(--blue);
 }
@@ -106,6 +110,10 @@
     background-color: var(--dark);
 }
 
+.text-transparent {
+    color: transparent;
+}
+
 .text-blue {
     color: var(--blue);
 }
@@ -188,4 +196,88 @@
 
 .text-dark {
     color: var(--dark);
+}
+
+.border-blue {
+    border-color: var(--blue) !important;
+}
+
+.border-indigo {
+    border-color: var(--indigo) !important;
+}
+
+.border-purple {
+    border-color: var(--purple) !important;
+}
+
+.border-pink {
+    border-color: var(--pink) !important;
+}
+
+.border-red {
+    border-color: var(--red) !important;
+}
+
+.border-orange {
+    border-color: var(--orange) !important;
+}
+
+.border-yellow {
+    border-color: var(--yellow) !important;
+}
+
+.border-green {
+    border-color: var(--green) !important;
+}
+
+.border-teal {
+    border-color: var(--teal) !important;
+}
+
+.border-cyan {
+    border-color: var(--cyan) !important;
+}
+
+.border-white {
+    border-color: var(--white) !important;
+}
+
+.border-gray {
+    border-color: var(--gray) !important;
+}
+
+.border-gray-dark {
+    border-color: var(--gray-dark) !important;
+}
+
+.border-primary {
+    border-color: var(--primary) !important;
+}
+
+.border-secondary {
+    border-color: var(--secondary) !important;
+}
+
+.border-success {
+    border-color: var(--success) !important;
+}
+
+.border-info {
+    border-color: var(--info) !important;
+}
+
+.border-warning {
+    border-color: var(--warning) !important;
+}
+
+.border-danger {
+    border-color: var(--danger) !important;
+}
+
+.border-light {
+    border-color: var(--light) !important;
+}
+
+.border-dark {
+    border-color: var(--dark) !important;
 }

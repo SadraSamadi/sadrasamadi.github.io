@@ -1,36 +1,50 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var year = document.getElementById('year');
-    var menuButton = document.querySelector('.menu-button');
-    var menu = document.querySelector('.menu');
+var year = document.getElementById('year');
+var navbar = document.querySelector('.navbar');
+var menu = document.querySelector('.navbar-menu');
+var menuIcon = menu.querySelector('i');
+var list = document.querySelector('.navbar-list');
+
+document.addEventListener('DOMContentLoaded', onContentLoaded);
+
+function onContentLoaded() {
     var now = new Date();
     year.innerHTML = now.getFullYear() + '';
     onScroll();
     window.onscroll = onScroll;
-    menuButton.addEventListener('click', onMenuOpen);
-    menu.addEventListener('click', onMenuClose);
-});
-
-function onMenuOpen() {
-    var menu = document.querySelector('.menu');
-    menu.style.left = '0';
-}
-
-function onMenuClose() {
-    var menu = document.querySelector('.menu');
-    menu.style.left = '-300px';
+    menu.addEventListener('click', onMenuClicked);
 }
 
 function onScroll() {
-    var header = document.querySelector('.header');
-    var headerTitle = document.querySelector('.header-title');
-    var size = 200;
-    if (document.body.scrollTop > size || document.documentElement.scrollTop > size) {
-        header.classList.add('shadow');
-        header.style.backgroundColor = 'var(--dark)';
-        headerTitle.style.color = 'var(--light)';
+    if (navOpened())
+        return;
+    navBgEnabled(scrolled());
+}
+
+function onMenuClicked() {
+    menuIcon.classList.toggle('fa-bars');
+    menuIcon.classList.toggle('fa-times');
+    list.style.maxHeight = navOpened() ? null : list.scrollHeight + 'px';
+    if (!scrolled())
+        navBgEnabled(navOpened());
+}
+
+function navOpened() {
+    return !!list.style.maxHeight;
+}
+
+function scrolled() {
+    var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    return scroll >= 200;
+}
+
+function navBgEnabled(enabled) {
+    if (enabled) {
+        navbar.classList.remove('bg-transparent');
+        navbar.classList.add('navbar-bg');
+        navbar.classList.add('shadow');
     } else {
-        header.classList.remove('shadow');
-        header.style.backgroundColor = 'transparent';
-        headerTitle.style.color = 'transparent';
+        navbar.classList.remove('navbar-bg');
+        navbar.classList.add('bg-transparent');
+        navbar.classList.remove('shadow');
     }
 }
